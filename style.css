@@ -3,10 +3,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 /* Container for overall layout */
 .container {
@@ -15,7 +13,7 @@
   margin: 30px auto;
   padding: 20px;
   margin-top: 5rem;
-  background-color:pink;
+  background-color: pink;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
@@ -36,6 +34,7 @@ h2 {
 /* Form styling */
 form {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
@@ -43,7 +42,8 @@ form {
 
 form input[type="text"] {
   padding: 10px;
-  width: 70%;
+  width: 100%;
+  max-width: 400px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -74,6 +74,9 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
 }
 
 table thead {
@@ -102,4 +105,31 @@ table a {
 
 table a:hover {
   text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form input[type="text"] {
+    width: 100%;
+  }
+  
+  form input[type="button"] {
+    width: 100%;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
